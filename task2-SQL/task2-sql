@@ -1,0 +1,225 @@
+use School;
+--Question 1:
+select count(St_Age) as TotalStudents from Student
+
+--Question 2:
+select distinct Ins_name from Instructor;
+
+--Question 3:
+select s.St_Id, 
+        ISNULL(s.st_fname,' ') + ' ' + ISNULL(s.St_lname,' ') as FullName ,
+         isnull(d.dept_name,'no department ') as Departmentname
+from student as s
+left join Department as d
+on s.dept_id = d.dept_id
+
+--Question 4:
+select ins_name as InstructorName, 
+       isnull(d.dept_name,'no department') as DepartmentName
+from Instructor as i
+left join Department as d
+on i.dept_id = d.dept_id
+
+--Question 5:
+select s.st_id,
+       isnull(s.st_fname,' ') + ' ' + isnull(s.st_lname,' ') as FullName,
+       c.Crs_Name
+from Student as s
+inner join stud_course as sc
+on s.st_id = sc.st_id
+inner join Course as c
+on sc.Crs_Id= c.Crs_Id
+where sc.Grade is not null
+
+--Question 6:
+select t.Top_Name as topicname,
+        count(c.Crs_Id) as TotalCourses
+from Topic as t
+left join Course as c
+on t.Top_Id = c.Top_Id
+group by t.Top_Name,t.Top_Id
+
+--Question 7:
+select max(salary) as MaxSalary, 
+       min(salary) as MinSalary
+from Instructor
+
+--Question 8:
+select avg(salary) as AverageSalary
+from Instructor
+SELECT Ins_Name, Salary
+FROM Instructor
+WHERE Salary < (
+    SELECT AVG(Salary)
+    FROM Instructor
+);
+
+--Question 9:
+select dept_name as DepartmentName
+from Department
+left join Instructor as i
+on Department.dept_id = i.dept_id
+where i.salary = (select min(salary) from Instructor)
+
+--Question 10:
+SELECT Ins_Name,
+       COALESCE(CAST(Salary AS VARCHAR(20)), 'Bonus') AS SalaryOrBonus
+FROM Instructor;
+
+--Question 11:
+select ins_name as InstructorName,Salary
+from Instructor
+       order by salary desc
+
+--Question 12:
+select top(5) ins_name as InstructorName,Salary
+from Instructor
+       order by salary desc
+
+--Question 13:
+select top(3) dept_name as DepartmentName, count(s.st_id) as TotalStudents
+from Department as d
+left join Student as s
+on d.dept_id = s.dept_id
+group by d.dept_name,d.dept_id
+order by TotalStudents desc
+
+--Question 14:
+use School;
+go
+
+create or alter view dbo.managertopics
+with encryption
+as
+select distinct
+       i.Ins_Name as managername,
+       t.Top_Name as topicname
+from dbo.Department as d
+inner join dbo.Instructor as i
+    on d.Dept_Manager = i.Ins_Id
+inner join dbo.Ins_Course as ic
+    on i.Ins_Id = ic.Ins_Id
+inner join dbo.Course as c
+    on ic.Crs_Id = c.Crs_Id
+inner join dbo.Topic as t
+    on c.Top_Id = t.Top_Id;
+go
+
+select *
+from dbo.managertopics;
+
+--Question 15:
+go
+
+create or alter view dbo.instructors_sd_java
+as
+select i.Ins_Name, d.Dept_Name
+from dbo.Instructor as i
+inner join dbo.Department as d
+    on i.Dept_Id = d.Dept_Id
+where d.Dept_Name in ('Software Development','Java');
+go
+
+select *
+from dbo.instructors_sd_java;
+
+--Question 16:
+go
+
+create or alter view dbo.v1
+as
+select *
+from dbo.Student
+where St_Address in ('Alex', 'Cairo');
+go
+
+select *
+from dbo.v1;
+
+use School;
+go
+
+-- 17: students with a grade greater than 50
+
+create or alter view dbo.students_passed_courses
+as
+select isnull(s.St_Fname, '') + ' ' + isnull(s.St_Lname, '') as fullname,
+       c.Crs_Name
+from dbo.Student as s
+inner join dbo.Stud_Course as sc
+    on s.St_Id = sc.St_Id
+inner join dbo.Course as c
+    on sc.Crs_Id = c.Crs_Id
+where sc.Grade > 50;
+go
+
+select *
+from dbo.students_passed_courses;
+go
+
+-- 18: departments with the maximum number of students
+
+with department_counts as (
+    select d.Dept_Id,
+           d.Dept_Name,
+           count(s.St_Id) as studentcount
+    from dbo.Department as d
+    left join dbo.Student as s
+        on d.Dept_Id = s.Dept_Id
+    group by d.Dept_Id, d.Dept_Name
+)
+select Dept_Name, studentcount
+from department_counts
+where studentcount = (
+    select max(studentcount)
+    from department_counts
+);
+go
+
+-- 19: instructors earning the second-highest distinct salary per department
+
+with ranked_instructors as (
+    select Ins_Id,
+           Ins_Name,
+           Dept_Id,
+           Salary,
+           dense_rank() over (
+               partition by Dept_Id
+               order by Salary desc
+           ) as salaryrank
+    from dbo.Instructor
+    where Salary is not null
+      and Dept_Id is not null
+)
+select Ins_Name, Dept_Id, Salary
+from ranked_instructors
+where salaryrank = 2;
+go
+
+-- 20: up to two highest-paid instructors per department
+
+with ranked_instructors as (
+    select Ins_Id,
+           Ins_Name,
+           Dept_Id,
+           Salary,
+           row_number() over (
+               partition by Dept_Id
+               order by Salary desc, Ins_Id
+           ) as salaryrank
+    from dbo.Instructor
+    where Salary is not null
+      and Dept_Id is not null
+)
+select Ins_Name, Dept_Id, Salary
+from ranked_instructors
+where salaryrank <= 2
+order by Dept_Id, salaryrank;
+
+
+       
+
+      
+
+
+       
