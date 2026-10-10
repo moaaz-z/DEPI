@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Moaaz Mohamed</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="{{ url_for('home') }}" class="logo">
+            Moaaz<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="{{ url_for('home') }}">Home</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('home') }}#about">About</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('home') }}#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('projects') }}">Projects</a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('home') }}#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="projects-page">
+
+        <div class="projects-header">
+
+            <p class="section-label">MY WORK</p>
+
+            <h1>Projects</h1>
+
+            <p>
+                Some of the projects I've worked on while learning
+                Data Engineering, Machine Learning and Software Development.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-number">01</div>
+
+                <h3>Internship Aggregator</h3>
+
+                <p>
+                    A platform that collects internship opportunities
+                    from different websites and puts them in one place
+                    so students can easily discover and apply for them.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Selenium</span>
+                    <span>SQL</span>
+                    <span>Flask</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Live Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">02</div>
+
+                <h3>Data Engineering Pipeline</h3>
+
+                <p>
+                    A data pipeline that collects data from multiple
+                    sources, cleans and transforms it, then stores it
+                    inside a structured database for analysis.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Docker</span>
+                    <span>ETL</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">03</div>
+
+                <h3>Machine Learning Project</h3>
+
+                <p>
+                    A machine learning project covering data preprocessing,
+                    model training, evaluation and prediction using
+                    real-world data.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>NumPy</span>
+                    <span>Pandas</span>
+                    <span>Scikit-learn</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">04</div>
+
+                <h3>ROS2 Robotics Project</h3>
+
+                <p>
+                    A ROS2 project involving robot movement, parameters,
+                    services and launch files while learning robotics
+                    software development.
+                </p>
+
+                <div class="project-tech">
+                    <span>ROS2</span>
+                    <span>Python</span>
+                    <span>Linux</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">05</div>
+
+                <h3>SQL Banking System</h3>
+
+                <p>
+                    A database project involving customers, accounts,
+                    transactions, joins, ranking, functions and SQL
+                    data analysis.
+                </p>
+
+                <div class="project-tech">
+                    <span>SQL Server</span>
+                    <span>SQL</span>
+                    <span>Docker</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">06</div>
+
+                <h3>Wuzzuf Jobs Scraper</h3>
+
+                <p>
+                    A Selenium web scraper that collects job opportunities
+                    including job title, company, location, experience
+                    and job URL.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Selenium</span>
+                    <span>CSV</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>© 2026 Moaaz Mohamed</p>
+
+    <div class="footer-links">
+
+        <a href="#">GitHub</a>
+
+        <a href="#">LinkedIn</a>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

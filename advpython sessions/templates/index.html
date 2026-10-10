@@ -3,9 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Moaaz Mohamed | Portfolio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>First Flask App</h1>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">Moaaz<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="small-title">Hello, I'm</p>
+
+                <h1>Moaaz Mohamed</h1>
+
+                <h2>
+                    Computer & Communication Engineering Student
+                </h2>
+
+                <p class="hero-description">
+                    Interested in Data Engineering, Machine Learning,
+                    Cloud Computing and building useful software solutions.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('projects') }}" class="btn primary-btn">
+                        View Projects
+                    </a>
+
+                    <a href="#contact" class="btn secondary-btn">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="code-window">
+
+                    <div class="window-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <pre>
+<span class="code-purple">class</span> <span class="code-blue">Moaaz</span> {
+
+    <span class="code-purple">constructor</span>() {
+        this.major = <span class="code-green">"CCE"</span>;
+        this.focus = <span class="code-green">"Data Engineering"</span>;
+        this.learning = <span class="code-green">true</span>;
+    }
+
+    build() {
+        return <span class="code-green">"Something useful"</span>;
+    }
+
+}
+                    </pre>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section" id="about">
+
+            <p class="section-label">ABOUT ME</p>
+
+            <h2 class="section-title">
+                Building my career one project at a time.
+            </h2>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p>
+                        I'm a Computer and Communication Engineering student
+                        interested in software development, data engineering,
+                        machine learning and cloud technologies.
+                    </p>
+
+                    <p>
+                        I enjoy learning new technologies and applying them
+                        through real projects that solve practical problems.
+                    </p>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <h3>CCE</h3>
+                        <p>Engineering Student</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>DE</h3>
+                        <p>Data Engineering</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>ML</h3>
+                        <p>Machine Learning</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Cloud</h3>
+                        <p>AWS & Cloud</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section" id="skills">
+
+            <p class="section-label">SKILLS</p>
+
+            <h2 class="section-title">
+                Technologies I work with.
+            </h2>
+
+            <div class="skills-container">
+
+                <div class="skill">Python</div>
+                <div class="skill">C++</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Git</div>
+                <div class="skill">GitHub</div>
+                <div class="skill">Docker</div>
+                <div class="skill">AWS</div>
+                <div class="skill">Machine Learning</div>
+                <div class="skill">Data Engineering</div>
+                <div class="skill">Linux</div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section" id="projects">
+
+            <p class="section-label">PROJECTS</p>
+
+            <h2 class="section-title">
+                Some things I've built.
+            </h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <div class="project-number">01</div>
+
+                    <h3>Internship Aggregator</h3>
+
+                    <p>
+                        A platform that collects internship opportunities
+                        from different sources and makes them easier for
+                        students to discover.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Web Scraping</span>
+                        <span>SQL</span>
+                    </div>
+
+                    <a href="{{ url_for('projects') }}" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">02</div>
+
+                    <h3>Data Engineering Project</h3>
+
+                    <p>
+                        A complete data pipeline for collecting,
+                        transforming and storing structured data
+                        for analytics.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>Docker</span>
+                    </div>
+
+                    <a href="{{ url_for('projects') }}" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">03</div>
+
+                    <h3>Machine Learning Project</h3>
+
+                    <p>
+                        A machine learning application using data
+                        preprocessing, model training and evaluation.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>NumPy</span>
+                        <span>Pandas</span>
+                    </div>
+
+                    <a href="{{ url_for('projects') }}" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact section" id="contact">
+
+            <p class="section-label">CONTACT</p>
+
+            <h2>
+                Have an interesting idea?
+            </h2>
+
+            <p>
+                I'm always interested in learning, collaborating
+                and working on interesting projects.
+            </p>
+
+            <a href="mailto:your@email.com" class="btn primary-btn">
+                Send Me An Email
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Moaaz Mohamed
+        </p>
+
+        <div class="footer-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
+    </footer>
+
 </body>
 </html>

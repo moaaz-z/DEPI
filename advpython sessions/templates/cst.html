@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Search</title>
+</head>
+
+<body>
+
+    <h1>Customer Search</h1>
+
+    <form method="POST" action="/">
+        <label>Customer ID:</label>
+        <input type="number" name="customer_id" required>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if table %}
+        <h2>Customer Data</h2>
+
+        {{ table | safe }}
+    {% endif %}
+
+</body>
+</html>
