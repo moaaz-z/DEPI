@@ -1,4 +1,4 @@
-# 🚀 Digital Egypt Pioneers Initiative (DEPI) — Data Engineering Portfolio
+# Digital Egypt Pioneers Initiative (DEPI) — Data Engineering Portfolio
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![SQL Server](https://img.shields.io/badge/Microsoft%20SQL%20Server-Database-CC292B?logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
@@ -13,11 +13,11 @@ This repository spans real-world data pipelines, modern data warehousing (Medall
 
 ---
 
-## 🗺️ Project Directory & Overview
+## Project Directory & Overview
 
 | Project / Task | Domain | Key Technologies | Description & Highlights |
 | :--- | :--- | :--- | :--- |
-| **[BookProject](./BookProject)** | Data Warehousing & ETL | SQL Server, SQLAlchemy, Pandas | Full **Medallion Architecture** (Bronze ➔ Silver ➔ Gold). Star schema modeling with `dim_customer`, `dim_book`, and `fact_orders`. |
+| **[BookProject](./BookProject)** | Data Warehousing & ETL | SQL Server, SQLAlchemy, Pandas | Full **Medallion Architecture** (Bronze Silver Gold). Star schema modeling with `dim_customer`, `dim_book`, and `fact_orders`. |
 | **[Task 1 - Flask & Selenium](./Task%201%20-%20Flask%20&%20Selenium)** | Web Scraping & Extraction | Selenium WebDriver, Chrome, Pandas | Automated discovery and extraction of Data Engineer job openings from **Naukrigulf**, exporting structured records to CSV. |
 | **[task3](./task3)** | Data Cleaning & EDA | Python, Pandas, Jupyter | Complete data cleaning, type coercion, missing value imputation, duplicate removal, and business EDA on supermarket sales. |
 | **[task2-SQL](./task2-SQL)** | Relational Querying | Microsoft SQL Server, T-SQL | 20 complex analytical queries on an educational schema: multi-table joins, encrypted views, CTEs, and window ranking (`DENSE_RANK`, `ROW_NUMBER`). |
@@ -28,7 +28,7 @@ This repository spans real-world data pipelines, modern data warehousing (Medall
 
 ---
 
-## 🏛️ Architecture & Core Highlights
+## Architecture & Core Highlights
 
 ```mermaid
 flowchart TD
@@ -43,7 +43,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Programming Languages:** Python 3.8+
 - **Data Analysis & Processing:** Pandas, NumPy
@@ -55,7 +55,7 @@ flowchart TD
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 ```bash
@@ -92,6 +92,6 @@ Each project folder contains its own dedicated documentation and usage instructi
 
 ---
 
-## 👥 Acknowledgments
+## Acknowledgments
 
 Developed by **Moaaz Mohamed** as part of the **Digital Egypt Pioneers Initiative (DEPI)** Data Engineering track.

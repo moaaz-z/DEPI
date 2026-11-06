@@ -1,4 +1,4 @@
-# ⚡ Flask & SQL Server Web Application
+# Flask & SQL Server Web Application
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
@@ -9,7 +9,7 @@ A full-stack data-driven web application built with **Flask**, **Pandas**, and *
 
 ---
 
-## 🎯 Architecture & Features
+## Architecture & Features
 
 ```mermaid
 flowchart LR
@@ -26,23 +26,23 @@ flowchart LR
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 advpython sessions/
-├── 1.ipynb                # Development notebook containing Flask routes and DB connectors
+├── 1.ipynb # Development notebook containing Flask routes and DB connectors
 ├── static/
-│   └── style.css          # Frontend styling rules
+│ └── style.css # Frontend styling rules
 ├── templates/
-│   ├── index.html         # Homepage and customer lookup form
-│   ├── project.html       # Project overview page
-│   └── cst.html           # Customer report template
-└── README.md              # Documentation
+│ ├── index.html # Homepage and customer lookup form
+│ ├── project.html # Project overview page
+│ └── cst.html # Customer report template
+└── README.md # Documentation
 ```
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
 - Python 3.8+

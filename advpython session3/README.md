@@ -1,4 +1,4 @@
-# 🌐 Advanced Python Session 3: Web Scraping Fundamentals
+# Advanced Python Session 3: Web Scraping Fundamentals
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Selenium](https://img.shields.io/badge/Selenium-Automation-43B02A?logo=selenium&logoColor=white)](https://www.selenium.dev/)
@@ -8,7 +8,7 @@ Practical introductory session covering dynamic browser automation and web scrap
 
 ---
 
-## 🎯 Topics Covered
+## Topics Covered
 
 - **WebDriver Initialization:** Setting up and configuring Chrome WebDriver.
 - **Browser Life Cycle:** Navigating to URLs, window maximization, timeouts, and safe browser termination (`driver.quit()`).
@@ -17,21 +17,21 @@ Practical introductory session covering dynamic browser automation and web scrap
 
 ---
 
-## 📁 Folder Contents
+## Folder Contents
 
 ```text
 advpython session3/
-├── webscraping.ipynb      # Interactive Jupyter notebook with Selenium exercises
-└── README.md              # Session documentation
+├── webscraping.ipynb # Interactive Jupyter notebook with Selenium exercises
+└── README.md # Session documentation
 ```
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Install Selenium:
-   ```bash
-   pip install selenium
-   ```
+ ```bash
+ pip install selenium
+ ```
 2. Ensure Google Chrome is installed on your machine.
 3. Open [`webscraping.ipynb`](webscraping.ipynb) and run the cells sequentially.
